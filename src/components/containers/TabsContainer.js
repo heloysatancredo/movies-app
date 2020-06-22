@@ -81,7 +81,7 @@ class TabsContainer extends Component {
           </TabList>
 
           <TabPanel>
-            <ShowsContainer show='movie' />
+            <ShowsContainer show='movie' filter='popular' />
           </TabPanel>
 
           <TabPanel className='textSearch'>
@@ -90,7 +90,7 @@ class TabsContainer extends Component {
           </TabPanel>
 
           <TabPanel>
-            <ShowsContainer show='tv' />
+            <ShowsContainer show='tv' filter='top_rated' />
           </TabPanel>
         </Tabs>
       </div>

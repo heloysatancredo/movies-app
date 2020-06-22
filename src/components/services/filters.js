@@ -43,15 +43,3 @@ export const updateFilters = (show) => {
 
   return filters
 }
-
-export const setFilter = (type) => {
-  let initialFilter = ''
-
-  if (type === 'tv') {
-    initialFilter = 'top_rated'
-  } else {
-    initialFilter = 'popular'
-  }
-
-  return initialFilter
-}

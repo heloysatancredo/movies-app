@@ -4,7 +4,7 @@ import MenuItem from '@material-ui/core/MenuItem'
 import { updateShow } from '../services/api'
 import Loading from '../layout/Loading'
 import ResultsContainer from '../containers/ResultsContainer'
-import { updateFilters, setFilter } from '../services/filters'
+import { updateFilters } from '../services/filters'
 
 class ShowsContainer extends Component {
   constructor(props) {
@@ -13,20 +13,18 @@ class ShowsContainer extends Component {
       list: [],
       isLoading: false,
       type: props.show,
-      filter: setFilter(props.show),
+      filter: props.filter,
       updatedFilter: [],
     }
     this.handleChange = this.handleChange.bind(this)
   }
 
   componentDidMount() {
-    setFilter(this.state.type)
     updateShow(this.state.filter, this.state.type).then((list) => {
       this.setState({
         list,
         isLoading: false,
         updatedFilter: updateFilters(this.state.type),
-        filter: setFilter(this.state.type),
       })
     })
   }
