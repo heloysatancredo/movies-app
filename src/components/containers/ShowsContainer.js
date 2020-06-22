@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import TextField from '@material-ui/core/TextField'
 import MenuItem from '@material-ui/core/MenuItem'
-import { updateShow } from '../services/api'
+import { updateShow } from '../../services/api'
 import Loading from '../layout/Loading'
-import ResultsContainer from '../containers/ResultsContainer'
-import { updateFilters } from '../services/filters'
+import Results from '../layout/Results'
+import { updateFilters } from '../helpers/filters'
 
 class ShowsContainer extends Component {
   constructor(props) {
@@ -60,9 +60,7 @@ class ShowsContainer extends Component {
             ))}
           </TextField>
         </form>
-        <div>
-          {isLoading ? <Loading /> : <ResultsContainer results={list} />}
-        </div>
+        <div>{isLoading ? <Loading /> : <Results results={list} />}</div>
       </div>
     )
   }

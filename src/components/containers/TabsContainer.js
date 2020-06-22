@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { getData } from '../services/api'
+import { getData } from '../../services/api'
 import Form from '../forms/Form'
-import ResultsContainer from './ResultsContainer'
+import Results from '../layout/Results'
 import Loading from '../layout/Loading'
 import ShowsContainer from './ShowsContainer'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
@@ -86,7 +86,7 @@ class TabsContainer extends Component {
 
           <TabPanel className='textSearch'>
             <h3>{this.state.textDisplay}</h3>
-            {isLoading ? <Loading /> : <ResultsContainer results={list} />}
+            {isLoading ? <Loading /> : <Results results={list} />}
           </TabPanel>
 
           <TabPanel>

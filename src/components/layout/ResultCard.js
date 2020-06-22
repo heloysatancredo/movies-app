@@ -1,5 +1,5 @@
 import React from 'react'
-import IMG_URL from '../config/img_config'
+import IMG_URL from '../../config/img_config'
 import Card from '@material-ui/core/Card'
 import CardHeader from '@material-ui/core/CardHeader'
 import CardMedia from '@material-ui/core/CardMedia'
@@ -18,17 +18,22 @@ const getStyles = makeStyles(() => ({
   title: {
     padding: '0',
     textAlign: 'center',
+    marginBottom: '5px',
   },
   subTitle: {
     color: 'gray',
     fontSize: '14px',
     textAlign: 'center',
+    marginBottom: '20px',
   },
   content: {
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'space-evenly',
+    justifyContent: 'flex-start',
     width: '100%',
+  },
+  overview: {
+    overflow: 'hidden',
   },
 }))
 
@@ -45,7 +50,7 @@ const ResultCard = (props) => {
         <Typography className={classes.subTitle}>
           Release Date: {props.release_date}| Popularity: {props.popularity}
         </Typography>
-        <Typography>{props.overview}</Typography>
+        <Typography className={classes.overview}>{props.overview}</Typography>
       </CardContent>
     </Card>
   )

@@ -1,8 +1,8 @@
 import React from 'react'
-import ResultCard from '../layout/ResultCard'
+import ResultCard from './ResultCard'
 import Card from '@material-ui/core/Card'
 
-const ResultsContainer = (props) => {
+const Results = (props) => {
   return (
     <div>
       {props.results.map((element) => {
@@ -33,4 +33,4 @@ const ResultsContainer = (props) => {
   )
 }
 
-export default ResultsContainer
+export default Results
